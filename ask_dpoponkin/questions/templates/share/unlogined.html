@@ -1,0 +1,11 @@
+<div class="row content-center" id="userblock"> <!--  frame-rounded -->
+    <div class="col-6"></div>
+    <div class="col-6">
+        <form action="{% url 'questions:login' %}" method="get">
+            <button class="btn userbutton btn-outline-success" type="submit">Log in</button>
+        </form>
+        <form action="{% url 'questions:register' %}" method="get">
+            <button class="btn userbutton btn-outline-success" type="submit">Register</button>
+        </form>
+    </div>
+</div>

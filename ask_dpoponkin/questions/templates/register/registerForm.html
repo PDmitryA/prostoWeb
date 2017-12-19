@@ -1,0 +1,28 @@
+<div class="text-left">
+    {% for error in form.non_field_errors %}
+        <p class="alert text-center">{{ error }}</p>
+    {% endfor %}
+    <hr>
+    <form action="#" method="POST">
+        {% csrf_token %}
+        {% for f in form.visible_fields %}
+        <div class="row">
+            <div class="col-4">
+            </div>
+            <div class="col-2">
+                <p>{{ f.label }}</p>
+            </div>
+            <div class="col-6">
+                {{ f }}
+            </div>
+        </div>
+        {% endfor %}
+        <br>
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-6">
+                <p class=""><input class="btn btn-outline-success" type="submit" value="Register"></p>
+            </div>
+        </div>
+    </form>
+</div>

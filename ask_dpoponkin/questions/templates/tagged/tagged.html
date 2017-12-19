@@ -1,0 +1,47 @@
+{% extends "index.html" %}
+
+{% block content %}
+    {% block topic %}
+        <div class="row">
+            <h1 class="col-8">Tag: {{ findTag }}</h1>
+          <!--<h4 class="col-4">Hot questions</h4>-->
+        </div><!--/span-->
+    <hr>
+    {% endblock topic %}
+    <div class="margin-good">
+        {% block greatQuestion %}
+            {% for topQuestion in topQuestions %}
+                {% include "share/question.html" %}
+            {% endfor %}
+        {% endblock greatQuestion %}
+    </div><!--/row-->
+{% endblock content %}
+
+
+{% block paginator %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-start">
+        {% if topQuestions.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ topQuestions.previous_page_number }}">Previous</a>
+            </li>
+        {% else %}
+            <li class="page-item disabled ">
+                <a class="page-link" href="">Previous</a>
+            </li>
+        {% endif %}
+        <li class="page-item">
+            <a class="page-link" href="#">{{ topQuestions.number }}</a>
+        </li>
+        {% if topQuestionsP.has_next %}
+            <li class="page-item  ">
+                <a class="page-link" href="?page={{ topQuestions.next_page_number }}">Next</a>
+            </li>
+        {% else %}
+            <li class="page-item disabled ">
+                <a class="page-link" href="">Next</a>
+            </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endblock paginator %}

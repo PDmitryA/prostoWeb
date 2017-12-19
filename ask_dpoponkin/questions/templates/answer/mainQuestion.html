@@ -1,0 +1,43 @@
+<div class="row border border-left-0 border-right-0 border-top-0">
+    <div class="col-2">
+        <div class="center-image">
+            <img class="userpic80" src="http://placehold.it/400x200"/>
+        </div>
+        <div class="rating-bar">
+            <div class="row justify-content-start">
+                <div class="col-3 minus-button">
+                    <a class="nomargin nopadding" href="#" role="button">
+                        <div class="minus-button">
+                            <p>-</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 rating-value nomargin nopadding">
+                    <p class="">{{ mainQuestion.rating }}</p>
+                </div>
+                <div class="col-3 plus-button">
+                    <a class="nomargin nopadding" href="#" role="button">
+                        <div class="plus-button">
+                            <p>+</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-10">
+        <h2>{{ mainQuestion.short }}</h2>
+        <p>{{ mainQuestion.text }}</p>
+        <div class="row">
+            <div class="col-4">
+            </div>
+            <div class="col-8">
+                <p class="tag">Tags:
+					{% for tag in mainQuestion.tags.all %}
+						<a href="{% url 'questions:tagged' tag.name %}">{{ tag.name }}</a>
+					{% endfor %}
+				</p>
+            </div>
+        </div>
+    </div>
+</div><!--/span-->

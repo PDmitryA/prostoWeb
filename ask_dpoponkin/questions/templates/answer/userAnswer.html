@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-2">
+        <div class="center-image">
+            <img class="userpic60" src="http://placehold.it/400x200"/>
+        </div>
+        <div class="rating-bar">
+            <div class="row justify-content-start">
+                <div class="col-3 minus-button">
+                    <a class="nomargin nopadding" href="#" role="button">
+                        <div class="minus-button">
+                            <p>-</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-6 rating-value nomargin nopadding">
+                    <p class="">{{ userAnswer.rating }}</p>
+                </div>
+                <div class="col-3 plus-button">
+                    <a class="nomargin nopadding" href="#" role="button">
+                        <div class="plus-button">
+                            <p>+</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-10">
+        <p>{{ userAnswer.text }}</p>
+        <p>
+            <a class="btn btn-outline-success" href="#" role="button">
+                <input class="m-0" type="checkbox" id="coding{{ userAnswer.pk }}" name="interest" value="coding">
+                <label class="m-0" for="coding{{ userAnswer.pk }}">Correct</label>
+            </a>
+        </p>
+    </div>
+</div><!--/span-->

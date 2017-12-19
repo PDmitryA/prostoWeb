@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+
+{% block content %}
+    {% block topic %}
+        <div class="row">
+            <h1 class="col-8">Log In</h1>
+          <!--<h4 class="col-4">Hot questions</h4>-->
+        </div><!--/span-->
+    <hr>
+    {% endblock topic %}
+	{% include "login/loginForm.html" %}
+{% endblock content %}
